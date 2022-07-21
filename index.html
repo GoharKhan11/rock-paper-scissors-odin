@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function winQuote (selection1, selection2) {
+            /* str, str -> str
+            Returns a win quote.
+            Note: to be used in gameStart. */
+            return "You Win! " + selection1 + " beats " + selection2 + "."; 
+        }
+
+        function loseQuote (selection1, selection2) {
+            /* str, str -> str
+            Returns a win quote.
+            Note: to be used in gameStart. */
+            return "You Lose! " + selection2 + " beats " + selection1 + "."; 
+        }
+
+        function getComputerChoice () {
+
+        }
+
+        function gameStart (playerSelection, computerSelection) {
+
+            // Change playerSelection string to first letter capital only
+            playerSelectionLC = playerSelection.atChar(0).toUpperCase() + playerSelection.substring(1).toLowerCase();
+            // Change computerSelection string to first letter capital only
+            computerSelectionLC = computerSelection.atChar(0).toUpperCase() + computerSelection.substring(1).toLowerCase();
+
+            // If selections are same, call draw.
+            if (playerSelectionLC == computerSelectionLC) {
+                return "It's a Draw! You both chose " + playerSelectionLC + ".";
+            }
+            // If player chooses Rock
+            else if (playerSelectionLC == "Rock") {
+                // Beats Scissors
+                if (computerSelectionLC == "Scissors") {
+                    return winQuote("Rock", "Scissors");
+                }
+                // Loses against Paper
+                else if (computerSelectionLC == "Paper") {}
+                    return loseQuote("Rock", "Paper");
+            }
+
+            // If player chooses Paper
+            else if (playerSelectionLC == "Paper") {
+                // Beats Rock
+                if (computerSelectionLC == "Rock") {
+                    return winQuote("Paper", "Rock");
+                }
+                // Loses against Scissors
+                else if (computerSelectionLC == "Scissors") {
+                    return loseQuote("Paper", "Scissors");
+                }
+            }
+
+            // If player chooses Scissors
+            else if (playerSelectionLC == "Scissors") {
+                // Beats Paper
+                if (computerSelectionLC == "Paper") {
+                    return winQuote("Scissors", "Paper");
+                }
+                // Loses against Rock
+                else if (computerSelectionLC == "Rock") {
+                    return loseQuote("Scissors", "Rock");
+                }
+            }
+            else {
+                return playerSelection + " is not a valid choice. Please select Rock, Paper or Scissors."
+            }
+
+        }
+    </script>
+</body>
+</html>
