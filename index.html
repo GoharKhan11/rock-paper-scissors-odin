@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="math.js" type="text/javascript"></script>
+    <title>Rock, Paper, Scissors!</title>
 </head>
 <body>
     <script>
@@ -24,15 +25,34 @@
         }
 
         function getComputerChoice () {
+            /* null -> str
+            returns one of Rock, Paper or Scissors randomly.
+            Note: to be used in game().
+            */
 
+            // Gets a random integer between 0 and 3
+            let randomInt = math.floor(math.random() * 3);
+
+            if (randomInt == 0) {
+                return "Rock"
+            }
+            else if (randomInt == 1) {
+                return "Paper"
+            }
+            else {
+                return "Scissors"
+            }
         }
 
-        function gameStart (playerSelection, computerSelection) {
+        function gameRound(playerSelection, computerSelection) {
+            /* str, str -> str
+            Plays a single round of Rock, Paper Scissors.
+            Uses two inputs to evaluate whether the player (playerSelection)
+            wins against the computer (computerSelection).
+            Note: Used in game().
+            */
 
-            // Change playerSelection string to first letter capital only
-            playerSelectionLC = playerSelection.atChar(0).toUpperCase() + playerSelection.substring(1).toLowerCase();
-            // Change computerSelection string to first letter capital only
-            computerSelectionLC = computerSelection.atChar(0).toUpperCase() + computerSelection.substring(1).toLowerCase();
+            // Change playerSelection string to first letter cfirst toUpperCase() + computerSelection.substring(1).toLowerCase();
 
             // If selections are same, call draw.
             if (playerSelectionLC == computerSelectionLC) {
@@ -74,6 +94,16 @@
             }
             else {
                 return playerSelection + " is not a valid choice. Please select Rock, Paper or Scissors."
+            }
+
+            function game() {
+                /* game loop.
+                Uses gameRound to play 5 rounds of rock, paper, scissors.
+                 */
+                for (let i=0; i <= 4; i++){
+                    userInput = prompt();
+                    console.log(gameRound(userInput, getComputerChoice()));
+                }
             }
 
         }
