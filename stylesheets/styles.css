@@ -1,0 +1,106 @@
+/* Body CSS */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5rem;
+    padding: 5rem;
+}
+
+/* -------- */
+
+/* Game Body CSS */
+
+.game-body {
+    display: flex;
+    flex-direction: column;
+    background-color: slategray;
+    border-radius: 0.5rem;
+    padding: 2rem;
+}
+
+/* > Main Game Area CSS (Log + sidebar) */
+
+.game-area {
+    display: flex;
+    gap: 1rem;
+    border: 0.2rem solid black;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+/* >> Game Log Area */
+
+.game-log {
+    flex-shrink: 0;
+    background-color: bisque;
+    border: 0.2rem solid black;
+    border-radius: 0.5rem;
+    height: 15rem;
+    width: 15rem;
+    overflow-y: hidden;
+}
+
+/* >> Sidebar Area*/
+
+.side-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-self: center;
+}
+
+/* >>> VS text */
+
+.VS-text {
+    text-align: center;
+}
+
+/* >>> Score Areas */
+
+.score-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.score-box {
+    text-align: center;
+    background-color: aliceblue;
+    height: 1.5rem;
+    width: 1.5rem;
+    padding: 0.25rem;
+}
+
+/* >>> Play Button */
+
+.play-button {
+    margin-top: 2rem;
+}
+
+/* > Game Area End */
+
+.choice-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    border: 0.2rem solid black;
+    border-radius: 0.5rem;
+    margin: 0rem 2rem;
+    padding: 1rem;
+}
+
+/* Game Body CSS End */
+
+/* All Buttons */
+
+button {
+    background-color: black;
+    color: whitesmoke;
+    border: 0.2rem solid black;
+    border-radius: 0.25rem;
+    height: 2.5rem;
+    padding: 0.25rem 1rem;
+}

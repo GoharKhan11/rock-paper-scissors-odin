@@ -1,3 +1,5 @@
+// Result Quote Section
+
 function winQuote (selection1, selection2) {
     /* str, str -> str
     Returns a win quote.
@@ -11,6 +13,8 @@ function loseQuote (selection1, selection2) {
     Note: to be used in gameStart. */
     return "You Lose! " + selection2 + " beats " + selection1 + "."; 
 }
+
+// Result Quote Section End
 
 function getComputerChoice () {
     /* null -> str
@@ -83,30 +87,30 @@ function gameRound(playerSelection, computerSelection) {
 }
 
     
-function game() {
-    /* game loop.
-    Uses gameRound to play 5 rounds of rock, paper, scissors.
-        */
+// function game() {
+//     /* game loop.
+//     Uses gameRound to play 5 rounds of rock, paper, scissors.
+//         */
 
-        // Creates  variable to store computer inputs from getComputerChoice()
-        let computerInput;
-        // A list of valid inputs for the game to be used in for loop
-        let validInputs = ["Rock", "Paper", "Scissors"];
-        // Loops through a round until 4 rounds have been completed
-        for (let i=0; i <= 4; i++){
-        userInput = prompt("Please choose Rock, Paper or Scissors.");
-        // Change userInput string to first letter capital only.
-        let userInputFormatted =  userInput.charAt(0).toUpperCase() + userInput.substring(1).toLowerCase();
-        // If userInput is not a valid choice (after formatting).
-        while (!validInputs.includes(userInputFormatted)) {
-            userInput = prompt("That was not a valid choice, please try again.", "none");
-            // Change userInput string to first letter capital only.
-            userInputFormatted =  userInput.charAt(0).toUpperCase() + userInput.substring(1).toLowerCase();
-        }
-        // Get computer input
-        computerInput = getComputerChoice()
-        // Evaluate the result and print to console.
-        console.log(gameRound(userInputFormatted, computerInput));
-    }
+//         // Creates  variable to store computer inputs from getComputerChoice()
+//         let computerInput;
+//         // A list of valid inputs for the game to be used in for loop
+//         let validInputs = ["Rock", "Paper", "Scissors"];
+//         // Loops through a round until 4 rounds have been completed
+//         for (let i=0; i <= 4; i++){
+//         userInput = prompt("Please choose Rock, Paper or Scissors.");
+//         // Change userInput string to first letter capital only.
+//         let userInputFormatted =  userInput.charAt(0).toUpperCase() + userInput.substring(1).toLowerCase();
+//         // If userInput is not a valid choice (after formatting).
+//         while (!validInputs.includes(userInputFormatted)) {
+//             userInput = prompt("That was not a valid choice, please try again.", "none");
+//             // Change userInput string to first letter capital only.
+//             userInputFormatted =  userInput.charAt(0).toUpperCase() + userInput.substring(1).toLowerCase();
+//         }
+//         // Get computer input
+//         computerInput = getComputerChoice()
+//         // Evaluate the result and print to console.
+//         console.log(gameRound(userInputFormatted, computerInput));
+//     }
 
-}
+// }
