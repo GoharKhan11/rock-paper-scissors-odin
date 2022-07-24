@@ -37,11 +37,30 @@ body {
     flex-shrink: 0;
     background-color: bisque;
     border: 0.2rem solid black;
-    border-radius: 0.5rem;
-    height: 15rem;
-    width: 15rem;
-    overflow-y: hidden;
+    border-radius: 0.25rem;
+    height: 20rem;
+    width: 22rem;
+    padding: 1rem;
+    overflow-y: scroll;
 }
+
+/* Game Log Area Scroll Bar */
+
+.game-log::-webkit-scrollbar {
+    max-height: 3rem;
+    width: 1vw;
+}
+
+.game-log::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 4rem;
+}
+
+.game-log::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0.4rem rgb(0, 0, 0, 0.3);
+}
+
+/* Game Log Area Scroll Bar End */
 
 /* >> Sidebar Area*/
 
